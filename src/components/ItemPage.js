@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import StoreItem from "./StoreItem";
 import data from "../assets/data";
 
-const ItemPage = () => {
+const ItemPage = (props) => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
 
@@ -13,7 +13,6 @@ const ItemPage = () => {
       for (let entry of data) {
         for (const value of Object.values(entry)) {
           if (value === Number(id)) {
-            console.log(value);
             setProduct(entry);
             break;
           }
@@ -25,9 +24,9 @@ const ItemPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar cartItemsLength={props.cartItems.length} />
       <h1>Id of product: {id}</h1>
-      <StoreItem product={product} />
+      <StoreItem product={product} addToCart={props.addToCart} />
     </div>
   );
 };

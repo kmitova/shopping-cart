@@ -8,11 +8,13 @@ const Store = () => {
   const [products, setProducts] = useState(data);
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
-    // console.log(cartItems.length);
-    setCartItems((prevItems) => [...prevItems, product]);
-    console.log(cartItems.length);
-  };
+  // const addToCart = (product) => {
+  //   // console.log(cartItems.length);
+  //   product.added = true;
+  //   setCartItems((prevItems) => [...prevItems, product]);
+  //   console.log(cartItems.length);
+  // };
+
   return (
     <div>
       <Navbar cartItemsLength={cartItems.length} />
@@ -27,7 +29,7 @@ const Store = () => {
             <StoreItem
               product={product}
               key={product.id}
-              addToCart={addToCart}
+              // addToCart={addToCart}
             />
           </Link>
         ))}

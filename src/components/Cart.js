@@ -1,19 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
+import StoreItem from "./StoreItem";
 import Navbar from "./Navbar";
 
-const Cart = () => {
+const Cart = (props) => {
   return (
     <div>
-      <Navbar />
+      <Navbar cartItemsLength={props.cartItems.length} />
       <h1>Cart</h1>
       <h2>Items</h2>
-      {/* IF CART IS EMPTY --> DISPLAY MESSAGE 'NO ITEMS ADDED' */}
+
+      {props.cartItems.length === 0 ? (
+        <h1>No items</h1>
+      ) : (
+        props.cartItems.map((item) => (
+          <StoreItem product={item} key={item.id} />
+        ))
+      )}
       <button>Remove all</button>
-      <CartItem />
-      <CartItem />
-      <CartItem />
       {/* TOTAL PRICE CHANGES IF AN ITEM IS REMOVED */}
       <p>total price</p>
       <Link to="/">
@@ -27,5 +31,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-// https://hygraph.com/blog/routing-in-react
