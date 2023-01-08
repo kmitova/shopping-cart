@@ -14,7 +14,12 @@ const Cart = (props) => {
         <h1>No items</h1>
       ) : (
         props.cartItems.map((item) => (
-          <StoreItem product={item} key={item.id} />
+          <StoreItem
+            product={item}
+            key={item.id}
+            increment={props.increment}
+            decrement={props.decrement}
+          />
         ))
       )}
       <button>Remove all</button>

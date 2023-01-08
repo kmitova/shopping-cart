@@ -7,10 +7,37 @@ import ItemPage from "./components/ItemPage";
 
 const RouteSwitch = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [amount, setAmount] = useState(1);
 
   const addToCart = (product) => {
-    setCartItems((cart) => [...cart, { ...product, added: true }]);
+    console.log(amount);
+    setCartItems((cart) => [
+      ...cart,
+      { ...product, added: true, quantity: amount },
+    ]);
   };
+
+  const increment = () => {
+    setAmount((amount) => amount + 1);
+    // setCartItems((cart) => [
+    //   ...cart,
+    //   { ...product, quantity: product.quantity + 1 },
+    // ]);
+  };
+
+  const decrement = () => {
+    setAmount((amount) => amount - 1);
+  };
+
+  // const decrement = (product) => {
+  //   setCartItems((cart) => [
+  //     ...cart,
+  //     { ...product, quantity: product.quantity - 1 },
+  //   ]);
+  //   console.log(product.quantity);
+  //   console.log("decreased");
+  //   console.log(cartItems.length);
+  // };
 
   return (
     <BrowserRouter>
@@ -19,11 +46,25 @@ const RouteSwitch = () => {
         <Route path="/store" element={<Store />} />
         <Route
           path="/cart"
-          element={<Cart cartItems={cartItems} addToCart={addToCart} />}
+          element={
+            <Cart
+              cartItems={cartItems}
+              addToCart={addToCart}
+              increment={increment}
+              decrement={decrement}
+            />
+          }
         />
         <Route
           path="/store/products/:id"
-          element={<ItemPage addToCart={addToCart} cartItems={cartItems} />}
+          element={
+            <ItemPage
+              addToCart={addToCart}
+              cartItems={cartItems}
+              increment={increment}
+              decrement={decrement}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -26,7 +26,12 @@ const ItemPage = (props) => {
     <div>
       <Navbar cartItemsLength={props.cartItems.length} />
       <h1>Id of product: {id}</h1>
-      <StoreItem product={product} addToCart={props.addToCart} />
+      <StoreItem
+        product={product}
+        addToCart={props.addToCart}
+        increment={props.increment}
+        decrement={props.decrement}
+      />
     </div>
   );
 };
