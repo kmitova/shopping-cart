@@ -7,51 +7,39 @@ import ItemPage from "./components/ItemPage";
 
 const RouteSwitch = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [amount, setAmount] = useState(1);
+  const [buttonText, setButtonText] = useState(true);
+  const [total, setTotal] = useState(0);
+
+  const clearCart = () => {
+    setCartItems([]);
+    setTotal(0);
+  };
 
   const addToCart = (product) => {
-    console.log(amount);
-    setCartItems((cart) => [
-      ...cart,
-      { ...product, added: true, quantity: amount },
-    ]);
+    setCartItems((cart) => [...cart, { ...product, added: true }]);
+    setTotal((total) => total + product.price);
+    setButtonText(!buttonText);
   };
 
-  const increment = () => {
-    setAmount((amount) => amount + 1);
-    // setCartItems((cart) => [
-    //   ...cart,
-    //   { ...product, quantity: product.quantity + 1 },
-    // ]);
+  const removeFromCart = (index, product) => {
+    setCartItems((cart) => cart.filter((product) => product.id !== index));
+    setButtonText(!buttonText);
+    setTotal((total) => total - product.price);
   };
-
-  const decrement = () => {
-    setAmount((amount) => amount - 1);
-  };
-
-  // const decrement = (product) => {
-  //   setCartItems((cart) => [
-  //     ...cart,
-  //     { ...product, quantity: product.quantity - 1 },
-  //   ]);
-  //   console.log(product.quantity);
-  //   console.log("decreased");
-  //   console.log(cartItems.length);
-  // };
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/store" element={<Store cartItems={cartItems} />} />
         <Route
           path="/cart"
           element={
             <Cart
               cartItems={cartItems}
               addToCart={addToCart}
-              increment={increment}
-              decrement={decrement}
+              clearCart={clearCart}
+              total={total}
             />
           }
         />
@@ -60,9 +48,9 @@ const RouteSwitch = () => {
           element={
             <ItemPage
               addToCart={addToCart}
+              removeFromCart={removeFromCart}
               cartItems={cartItems}
-              increment={increment}
-              decrement={decrement}
+              buttonText={buttonText}
             />
           }
         />

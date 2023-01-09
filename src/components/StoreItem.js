@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const StoreItem = (props) => {
-  // const [amount, setAmount] = useState(1);
+  console.log(props.product);
+  console.log(props.product.added);
+  const isAdded = props.product.added;
 
+  // const [buttonText, setButtonText] = useState(true);
+  console.log(isAdded);
   return (
     // STORE ITEM IS WRAPPED IN A LINK WHICH LEADS TO ITS INDIVIDUAL PAGE
 
@@ -15,15 +19,16 @@ const StoreItem = (props) => {
       />
       <p>{props.product.alt}</p>
       <p>description</p>
-      <p>price</p>
-      <p>{props.product.quantity}</p>
-      <div>
-        <button onClick={() => props.decrement(props.product)}>Decrease</button>
-        <button onClick={() => props.increment()}>Increase</button>
-      </div>
-      <button onClick={() => props.addToCart(props.product)}>
-        Add to cart
-      </button>
+      <p>{props.product.price}</p>
+      {/* {props.buttonText ? (
+        <button onClick={() => props.addToCart(props.product)}>
+          Add to Cart
+        </button>
+      ) : (
+        <button onClick={() => props.removeFromCart(props.product.id)}>
+          Remove
+        </button>
+      )} */}
     </div>
   );
 };

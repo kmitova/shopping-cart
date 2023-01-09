@@ -22,11 +22,11 @@ const Cart = (props) => {
           />
         ))
       )}
-      <button>Remove all</button>
+      <button onClick={() => props.clearCart()}>Remove all</button>
       {/* TOTAL PRICE CHANGES IF AN ITEM IS REMOVED */}
-      <p>total price</p>
+      <p>{props.total}</p>
       <Link to="/">
-        <button>Complete Checkout</button>
+        <button onClick={() => props.clearCart()}>Complete Checkout</button>
       </Link>
       <Link to="/store">
         <button>Continue shopping</button>

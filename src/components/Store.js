@@ -1,23 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import StoreItem from "./StoreItem";
 import data from "../assets/data";
 
-const Store = () => {
-  const [products, setProducts] = useState(data);
-  const [cartItems, setCartItems] = useState([]);
-
-  // const addToCart = (product) => {
-  //   // console.log(cartItems.length);
-  //   product.added = true;
-  //   setCartItems((prevItems) => [...prevItems, product]);
-  //   console.log(cartItems.length);
-  // };
+const Store = (props) => {
+  const products = data;
 
   return (
     <div>
-      <Navbar cartItemsLength={cartItems.length} />
+      <Navbar cartItemsLength={props.cartItems.length} />
       <h1>store</h1>
       <div>
         {products.map((product) => (
@@ -29,12 +21,12 @@ const Store = () => {
             <StoreItem
               product={product}
               key={product.id}
-              // addToCart={addToCart}
+              addToCart={props.addToCart}
+              removeFromCart={props.removeFromCart}
+              cartItems={props.CartItems}
             />
           </Link>
         ))}
-        {/* <StoreItem />
-        <StoreItem /> */}
       </div>
     </div>
   );

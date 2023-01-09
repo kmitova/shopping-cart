@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import StoreItem from "./StoreItem";
+import Buttons from "./Buttons";
 import data from "../assets/data";
 
 const ItemPage = (props) => {
@@ -29,8 +30,15 @@ const ItemPage = (props) => {
       <StoreItem
         product={product}
         addToCart={props.addToCart}
-        increment={props.increment}
-        decrement={props.decrement}
+        removeFromCart={props.removeFromCart}
+        buttonText={props.buttonText}
+      />
+      <Buttons
+        product={product}
+        addToCart={props.addToCart}
+        removeFromCart={props.removeFromCart}
+        buttonText={props.buttonText}
+        cartItems={props.cartItems}
       />
     </div>
   );
