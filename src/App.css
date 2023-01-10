@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 
 .App {
   margin: 0;
@@ -24,15 +23,16 @@ h1 {
 
 a {
   text-decoration: none;
-  color:#282c34;
+  color: #282c34;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
 .hero {
-  background: url('assets/images/hero.avif') #d1d5db;
+  background: url("assets/images/hero.avif") #d1d5db;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -49,6 +49,7 @@ button, a {
 .hero-items {
   border: 2px solid white;
   margin-top: 6em;
+  padding: 3em;
   max-width: 90%;
   display: flex;
   align-items: center;
@@ -56,24 +57,24 @@ button, a {
   flex-direction: column;
   gap: 1.4em;
   background-color: white;
-  padding: .9em;
+  /* padding: .9em; */
   border-radius: 6px;
 }
 
 .to-store-btn {
-  background-color: #d1d5db;
-  color: #282c34;
   font-size: large;
   width: 9em;
   height: 2.5em;
   border: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 100;
-  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #dc2626;
+  color: white;
 }
 
 .to-store-btn:hover {
-  font-weight: 400;
+  font-weight: 100;
 }
 
 .logo {
@@ -85,13 +86,13 @@ button, a {
 }
 
 button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 
 .product-img {
   width: 250px;
   height: 250px;
+  border-radius: 5px;
 }
 
 .navbar {
@@ -107,7 +108,6 @@ button {
   align-items: center;
   justify-content: center;
   gap: 2em;
-
 }
 
 .navbar ul li {
@@ -124,13 +124,13 @@ button {
   /* padding: 2em; */
   margin: 1em 3em 3em;
   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 2.3em;
-    /* margin: auto; */
-    justify-content: space-evenly;
-      justify-items: center;
-      align-content: space-evenly;
-      align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2.3em;
+  /* margin: auto; */
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
 }
 
 .store-item-product {
@@ -142,9 +142,8 @@ button {
 
 .store-item-product img {
   margin-bottom: 1.3em;
+  border-radius: 7px;
 }
-
-
 
 .store .store-grid-item {
   display: flex;
@@ -157,12 +156,13 @@ button {
   height: 250px;
 }
 
-.store h3, p{
+.store h3,
+p {
   text-align: center;
 }
 
 .store .item {
-  padding: 0 .4em;
+  padding: 0 0.4em;
 }
 
 .store .item h3 {
@@ -181,22 +181,14 @@ button {
 }
 
 .item-container .right-side {
-  /* margin-left: 6em;
-  margin-top: auto; */
   text-align: center;
-    /* margin-right: auto; */
-
-  
 }
-
 
 .item {
   display: flex;
-
   align-items: center;
   justify-content: center;
   gap: 2em;
-
 }
 
 .item .item-right-side {
@@ -207,22 +199,18 @@ button {
 }
 
 .item-description {
-  /* border: 1px solid green; */
-  /* width: 50em; */
   text-align: center;
   padding: 2em 4em;
 }
 
-.add-btn, .remove-btn {
-  font-family: 'Poppins', sans-serif;
-  /* width: 12em;
-  height: 4em; */
+.add-btn,
+.remove-btn {
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: large;
-  padding: .5em;
+  padding: 0.5em;
   margin-top: 1em;
   border: none;
-
 }
 
 .add-btn {
@@ -243,6 +231,7 @@ button {
   padding: 4em;
 }
 
+
 .cart-container h1 {
   margin-bottom: 1.4em;
 }
@@ -250,7 +239,7 @@ button {
 .cart .total {
   font-weight: 700;
   font-size: large;
-  padding: .4em;
+  padding: 0.4em;
 }
 
 .cart-icon {
@@ -262,28 +251,22 @@ button {
   align-items: flex-start;
 }
 
-.cart .continue-btn, .cart .checkout-btn, .remove-all-btn {
-    font-family: 'Poppins', sans-serif;
-      /* width: 12em;
-      height: 4em; */
-      font-weight: 700;
-      font-size: large;
-      padding: .5em;
-      margin-top: 1em;
-      border: none;
-      background-color: #fee2e2;
-      color: #dc2626;
+.cart .continue-btn,
+.cart .checkout-btn,
+.remove-all-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: large;
+  padding: 0.5em;
+  margin-top: 1em;
+  border: none;
+  background-color: #fee2e2;
+  color: #dc2626;
 }
-
-
 
 .cart-item {
   margin-bottom: 1em;
 }
-
-
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

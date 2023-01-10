@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cart from "../assets/images/cart-icon.png";
-// src / assets / images / cart - icon.png;
+
 const Navbar = (props) => {
+  const { cartItemsLength } = props;
   return (
     <nav className="navbar">
       <div>
@@ -20,7 +21,7 @@ const Navbar = (props) => {
           <Link to="/cart">
             <div className="cart-nav">
               <img className="cart-icon" src={cart} alt="cart-icon" />
-              {props.cartItemsLength > 0 ? props.cartItemsLength : ""}
+              {cartItemsLength > 0 ? cartItemsLength : ""}
             </div>
           </Link>
         </li>

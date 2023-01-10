@@ -4,14 +4,14 @@ import Navbar from "./Navbar";
 import data from "../assets/data";
 
 const Store = (props) => {
+  const { cartItems } = props;
   const products = data;
-  console.log(products);
 
   return (
     <div>
-      <Navbar cartItemsLength={props.cartItems.length} />
+      <Navbar cartItemsLength={cartItems.length} />
       <div className="store">
-        <h1 className="store-title">Store</h1>
+        <h1 className="store-title">Our Products</h1>
         <div className="items-container">
           {products.map((product) => (
             <Link
@@ -20,7 +20,7 @@ const Store = (props) => {
               product={product}
               className="store-item-product"
             >
-              <img src={product.src} />
+              <img src={product.src} alt={product.title} />
               <h3>{product.title}</h3>
               <p className="item-price">${product.price}</p>
             </Link>

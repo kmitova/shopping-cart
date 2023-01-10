@@ -5,61 +5,36 @@ import Buttons from "./Buttons";
 import Navbar from "./Navbar";
 
 const Cart = (props) => {
+  const { cartItems, removeFromCart, buttonText, total, clearCart } = props;
   return (
     <div className="cart">
-      <Navbar cartItemsLength={props.cartItems.length} />
+      <Navbar cartItemsLength={cartItems.length} />
       <div className="cart-container">
         <h1> Your Cart:</h1>
-
-        {props.cartItems.length === 0 ? (
+        {cartItems.length === 0 ? (
           <h2>Your cart is empty</h2>
         ) : (
-          props.cartItems.map((item) => (
-            <div>
-              <StoreItem
-                className="cart-item"
-                product={item}
-                key={item.id}
-                increment={props.increment}
-                decrement={props.decrement}
-              />
+          cartItems.map((item) => (
+            <div className="items-in-cart">
+              <StoreItem className="cart-item" product={item} key={item.id} />
               <Buttons
                 product={item}
-                removeFromCart={props.removeFromCart}
-                buttonText={props.buttonText}
-                cartItems={props.cartItems}
+                removeFromCart={removeFromCart}
+                buttonText={buttonText}
+                cartItems={cartItems}
               />
-              {/* <button
-                className="remove-all-btn"
-                onClick={() => props.clearCart()}
-              >
-                Remove all
-              </button>
-              <p className="total">Total: ${props.total.toFixed(1)}</p>
-              <Link to="/">
-                <button
-                  className="checkout-btn"
-                  onClick={() => props.clearCart()}
-                >
-                  Complete Checkout
-                </button>
-              </Link> */}
             </div>
           ))
         )}
 
-        {props.cartItems.length > 0 ? (
+        {cartItems.length > 0 ? (
           <div>
-            {" "}
-            <p className="total">Total: ${props.total.toFixed(2)}</p>
+            <p className="total">Total: ${total.toFixed(2)}</p>
             <Link to="/">
-              <button
-                className="checkout-btn"
-                onClick={() => props.clearCart()}
-              >
+              <button className="checkout-btn" onClick={() => clearCart()}>
                 Complete Checkout
               </button>
-            </Link>{" "}
+            </Link>
           </div>
         ) : (
           ""
