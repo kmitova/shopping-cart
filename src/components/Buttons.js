@@ -14,11 +14,15 @@ const Buttons = (props) => {
   return (
     <div>
       {!productAdded ? (
-        <button onClick={() => props.addToCart(props.product)}>
+        <button
+          className="add-btn"
+          onClick={() => props.addToCart(props.product)}
+        >
           Add to Cart
         </button>
       ) : (
         <button
+          className="remove-btn"
           onClick={() => props.removeFromCart(props.product.id, props.product)}
         >
           Remove

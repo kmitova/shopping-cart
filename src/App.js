@@ -2,10 +2,10 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar cartItemsLength={props.cartItems.length} />
       <Home />
     </div>
   );

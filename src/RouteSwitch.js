@@ -30,7 +30,7 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<App cartItems={cartItems} />} />
         <Route path="/store" element={<Store cartItems={cartItems} />} />
         <Route
           path="/cart"
@@ -39,12 +39,13 @@ const RouteSwitch = () => {
               cartItems={cartItems}
               addToCart={addToCart}
               clearCart={clearCart}
+              removeFromCart={removeFromCart}
               total={total}
             />
           }
         />
         <Route
-          path="/store/products/:id"
+          path="/store/products/:slug"
           element={
             <ItemPage
               addToCart={addToCart}

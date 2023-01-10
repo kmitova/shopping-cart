@@ -1,32 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
-import StoreItem from "./StoreItem";
 import data from "../assets/data";
 
 const Store = (props) => {
   const products = data;
+  console.log(products);
 
   return (
     <div>
       <Navbar cartItemsLength={props.cartItems.length} />
-      <h1>store</h1>
-      <div>
-        {products.map((product) => (
-          <Link
-            to={`products/${product.id}`}
-            key={product.id}
-            product={product}
-          >
-            <StoreItem
-              product={product}
+      <div className="store">
+        <h1 className="store-title">Store</h1>
+        <div className="items-container">
+          {products.map((product) => (
+            <Link
+              to={`products/${product.slug}`}
               key={product.id}
-              addToCart={props.addToCart}
-              removeFromCart={props.removeFromCart}
-              cartItems={props.CartItems}
-            />
-          </Link>
-        ))}
+              product={product}
+              className="store-item-product"
+            >
+              <img src={product.src} />
+              <h3>{product.title}</h3>
+              <p className="item-price">${product.price}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
