@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.1ce8dd5d.css",
+    "main.js": "/shopping-cart/static/js/main.00981eb9.js",
+    "static/media/hero.avif": "/shopping-cart/static/media/hero.68fab291e081858366c9.avif",
+    "static/media/shake10.avif": "/shopping-cart/static/media/shake10.7cea41e75960d454fb40.avif",
+    "static/media/shake5.avif": "/shopping-cart/static/media/shake5.12bba2129e39474ef08f.avif",
+    "static/media/shake11.avif": "/shopping-cart/static/media/shake11.5e2b7a7eb58d884e39b0.avif",
+    "static/media/shake9.avif": "/shopping-cart/static/media/shake9.61fb8ab26700d66a498e.avif",
+    "static/media/shake12.avif": "/shopping-cart/static/media/shake12.6826b1ecfb4bbf66e387.avif",
+    "static/media/shake3.avif": "/shopping-cart/static/media/shake3.567d74fdda4089b8acb9.avif",
+    "static/media/shake1.avif": "/shopping-cart/static/media/shake1.2f07f9921a4a1749077e.avif",
+    "static/media/shake7.avif": "/shopping-cart/static/media/shake7.9bc234aa1ebe136baf06.avif",
+    "static/media/shake2.avif": "/shopping-cart/static/media/shake2.a1f2290260572d3d8c63.avif",
+    "static/media/shake4.avif": "/shopping-cart/static/media/shake4.a7c84d863682c83adc19.avif",
+    "static/media/shake6.avif": "/shopping-cart/static/media/shake6.89c6cb7650c198ed59f9.avif",
+    "static/media/shake8.avif": "/shopping-cart/static/media/shake8.2a2b091888b153e205fe.avif",
+    "index.html": "/shopping-cart/index.html",
+    "main.1ce8dd5d.css.map": "/shopping-cart/static/css/main.1ce8dd5d.css.map",
+    "main.00981eb9.js.map": "/shopping-cart/static/js/main.00981eb9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ce8dd5d.css",
+    "static/js/main.00981eb9.js"
+  ]
+}
